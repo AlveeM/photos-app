@@ -1,0 +1,15 @@
+<%= image_tag(@image.image_url) %>
+<h1><%= @image.title %></h1>
+
+<div>
+  <p>uploaded at: <%= @image.uploaded_at %></p>
+  <p><%= @image.description %></p>
+  <p>Views: <%= @image.views %></p>  
+  <p>Likes: <%= @image.likes %></p>  
+  <p>Dislikes: <%= @image.dislikes %></p> 
+</div>
+
+<p><%= link_to "Back", images_path %> | <%= link_to "Edit", edit_image_path(@image) %></p>
+
+<h3>DANGER!!!</h3>
+<%= button_to "Delete", image_path(@image), method: 'delete' %>
