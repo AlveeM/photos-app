@@ -1,0 +1,10 @@
+<h1><%= @collage.name %></h1>
+
+<div>
+  <p><%= @collage.description %></p>
+</div>
+
+<p><%= link_to "Back", collages_path %> | <%= link_to "Edit", edit_collage_path(@collage) %></p>
+
+<h3>DANGER!!!</h3>
+<%= button_to "Delete", collage_path(@collage), method: 'delete' %>

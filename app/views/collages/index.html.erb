@@ -1,0 +1,7 @@
+<h1>Collages</h1>
+
+<ul>
+  <% @collages.each do |collage| %>
+    <li><%= link_to collage.name, collage_path(collage) %></li>
+  <% end %>
+</ul>
