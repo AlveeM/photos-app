@@ -1,4 +1,4 @@
-<h1>Create a New Form</h1>
+<h1>Create a New Image</h1>
 
 <% if @image.errors.any? %>
   <div id="error_explanation">
@@ -20,5 +20,23 @@
   <%= f.label :image_url %>
   <%= f.text_field :image_url %><br>
 
+  <br>
+  <h3>Select a Collage</h3>
+  <%= f.collection_select(:collage_id, Collage.all, :id, :name, prompt: true) %>
+
+  <%
+=begin%>
+ <br><br>
+  <h3>Create a Collage</h3>
+  <%= f.fields_for :collage do |c| %>
+    <%= c.label :name %>
+    <%= c.text_field :name %><br>
+    <%= c.label :description %>
+    <%= c.text_field :description %><br>
+  <% end %> 
+<%
+=end%>
+
+  <br><br>
   <%= f.submit "Create Image" %>
 <% end %>

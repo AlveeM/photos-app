@@ -4,6 +4,12 @@
   <p><%= @collage.description %></p>
 </div>
 
+<h3>Images in the Collage</h3>
+<% @collage.images.each do |img| %>
+  <p><%= link_to img.title, image_path(img) %></p>
+<% end %>
+
+<br>
 <p><%= link_to "Back", collages_path %> | <%= link_to "Edit", edit_collage_path(@collage) %></p>
 
 <h3>DANGER!!!</h3>

@@ -13,6 +13,7 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
+    @image.build_collage
   end
 
   def create
@@ -49,6 +50,6 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:title, :description, :image_url)
+    params.require(:image).permit(:title, :description, :image_url, :collage_id, collage_attributes: [:name, :description])
   end
 end
