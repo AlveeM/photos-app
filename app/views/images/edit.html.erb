@@ -1,5 +1,23 @@
 <h1>Edit Image</h1>
 
+<%
+=begin%>
+ <% if @image.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+    <ul>
+      <% @image.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %> 
+<%
+=end%>
+
+<%= render(partial: "errors/errors", locals: { model: @image }) %>
+
 <%= form_with model: @image do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>

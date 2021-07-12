@@ -1,7 +1,8 @@
 <h1>Most Recent Images</h1>
 
 <ul>
-  <% @images.each do |img| %>
-    <li><%= link_to img.title, image_path(img) %> - <%= img.uploaded_at %></li>
+  <% @images.each do |image| %>
+    <!-- <li><%= link_to image.title, image_path(image) %> - <%= image.uploaded_at %></li> -->
+    <li><%= link_to image.title, image_path(image) %> - <%= image_date_format(image) %></li>
   <% end %>
 </ul>
