@@ -13,14 +13,27 @@
           <%= link_to "Most Recent", recent_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <%= link_to "New Image", new_image_path, class: "nav-link active" %>
-        </li>
-        <li class="nav-item">
           <%= link_to "Collages", collages_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "New Collage", new_collage_path, class: "nav-link active" %>
-        </li>
+
+        <% if signed_in? %>
+          <li class="nav-item">
+            <%= link_to "New Image", new_image_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New Collage", new_collage_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Out", signout_path, class: "nav-link active", method: 'delete' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", signup_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign In", signin_path, class: "nav-link active" %>
+          </li>
+        <% end %>
       </ul>
       <%
 =begin%>

@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
-  belongs_to :collage
+  belongs_to :collage, optional: true
   accepts_nested_attributes_for :collage
 
   validates :title, presence: true, uniqueness: { message: "needs to be unique" }

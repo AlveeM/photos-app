@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  before_action :redirect_if_not_signed_in, only: [:new, :create, :edit, :update]
+
   def index
     @images = Image.all
   end
